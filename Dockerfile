@@ -1,5 +1,6 @@
 FROM python:3.9
 WORKDIR /
+RUN apt-get update && apt-get install libgl1
 COPY ./requirements.txt /requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /requirements.txt
 ADD https://storage.googleapis.com/solar_roof_model_weights/train_test_split.pth /weights.pth
